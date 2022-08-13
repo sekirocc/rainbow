@@ -1,4 +1,4 @@
-Rainbow, service api
+Rainbow, a service api
 
 ## Develop
 

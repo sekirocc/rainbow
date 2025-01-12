@@ -1,0 +1,67 @@
+CHANGES
+=======
+
+* roll-back resources status when erase resources fail
+* notify add host info
+* Add el7 on rpm name
+* Only if billing service retCode is 0, can we be sure that bill has been make successfully, otherwise log everything down
+* when error happended during call billing_endpoint, log request url and body and response
+* add missing config: billing_debug
+* enable session persistence timeout to be set
+* let a job finish entire op when create or update listener
+* add format validate for backend ip address
+* enable access lcs api
+* update config item ,retry
+* update config item
+* pass tox tests
+* invoke some lcs api for l2b
+* eliminate lcs from tests
+* eliminate lcs from dba
+* eliminate lcs from model
+* eliminate lcs from billing
+* rename lcs to l2b
+
+1.1.2
+-----
+
+* use region_id as os environ name
+
+1.1.0
+-----
+
+* config.setup can pass in 'region' parameter
+
+1.0.8
+-----
+
+* add region config. app_name be guessed from region config
+* code refactor: re-organize import orders; use filters.order_by to replace base.order_by
+
+1.0.6
+-----
+
+* split requirements.txt => requirements.txt & requirements-priv.txt. The '-priv' requirements contains packages that are not hosted in pypi, but hosted in legitlab.com
+* pass in try_period when create every job
+* SyncResourceException wrapped exceptions should have resouce_id key
+* fix bugs for notify
+* local development include test-requirements
+* logs dir is at same level as app root dir
+* update env.sample
+* move densefog requirements to SPEC and test env
+
+1.0.4
+-----
+
+* temporarily disable yum-builddep, for centos is currently unable to connect vault.centos.org
+* build.sh use aliyun repo
+
+1.0.2
+-----
+
+* log dir is required by densefog
+* only use http api to hide wm_stat&wm_mid&guard
+
+1.0.0
+-----
+
+* Initial commit

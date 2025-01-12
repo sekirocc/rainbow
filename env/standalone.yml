@@ -1,29 +1,29 @@
 public:
   build: ./core
-  command: /rainbow/core/run.sh rainbow-ecs-public
+  command: /rainbow/core/run.sh rainbow-public
   env_file: .env
   extra_hosts:
-      - "m-13-126-test02-yz.bj-cn.vps.azure.com:192.168.31.20"
+      - "keystone.cn-dev-1.lcs.company.com:10.248.128.240"
   volumes:
     - "./:/rainbow"
   ports:
     - "0.0.0.0:${PUBLIC_PORT}:${PUBLIC_PORT}"
 manage:
   build: ./core
-  command: /rainbow/core/run.sh rainbow-ecs-manage
+  command: /rainbow/core/run.sh rainbow-manage
   env_file: .env
   extra_hosts:
-      - "m-13-126-test02-yz.bj-cn.vps.azure.com:192.168.31.20"
+      - "keystone.cn-dev-1.lcs.company.com:10.248.128.240"
   volumes:
     - "./:/rainbow"
   ports:
     - "0.0.0.0:${MANAGE_PORT}:${MANAGE_PORT}"
 worker:
   build: ./core
-  command: /rainbow/core/run.sh rainbow-ecs-worker
+  command: /rainbow/core/run.sh rainbow-worker
   env_file: .env
   extra_hosts:
-      - "m-13-126-test02-yz.bj-cn.vps.azure.com:192.168.31.20"
+      - "keystone.cn-dev-1.lcs.company.com:10.248.128.240"
   volumes:
     - "./:/rainbow"
 db:

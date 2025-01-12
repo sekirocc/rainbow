@@ -1,0 +1,8 @@
+#!/bin/bash
+# description: rainbow-shell
+
+set -o allexport
+source /etc/densefog/rainbow.conf
+set +o allexport
+
+/usr/bin/.rainbow-shell

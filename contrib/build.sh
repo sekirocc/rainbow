@@ -23,3 +23,14 @@ cd ../
 
 yum-builddep -y contrib/SPECS/$spec
 rpmbuild -ba contrib/SPECS/$spec --define "dist .el7"
+
+echo 'uploading...'
+wget http://10.11.144.11:8080/upload.py
+for filename in `find ./ -name *.rpm`
+do
+    if [[ "$version" =~ "dev" ]]; then
+        python upload.py -f $filename -r rainbow-development
+    else
+        python upload.py -f $filename -r rainbow
+    fi
+done

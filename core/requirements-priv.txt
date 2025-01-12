@@ -1,0 +1,2 @@
+-e git+http://mygitlab.company.cn/openstack/python-cinderclient.git@stable/rainbow#egg=python_cinderclient
+-e git+http://mygitlab.company.cn/rainbow/densefog.git#egg=densefog

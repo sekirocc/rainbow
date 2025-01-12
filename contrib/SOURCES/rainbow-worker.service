@@ -1,0 +1,13 @@
+[Unit]
+Description=rainbow
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/etc/init.d/rainbow-worker start
+ExecReload=/etc/init.d/rainbow-worker restart
+ExecStop=/etc/init.d/rainbow-worker stop
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

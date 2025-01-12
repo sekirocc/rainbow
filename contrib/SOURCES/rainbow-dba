@@ -1,0 +1,31 @@
+#!/bin/bash
+# description: rainbow-dba
+
+set -o allexport
+source /etc/rainbow/rainbow.conf
+set +o allexport
+
+# See how we were called.
+case "$1" in
+  migrate)
+        /usr/bin/.rainbow-dba migrate
+        ;;
+  revision)
+        if [ $# == 2 ]
+        then
+            /usr/bin/.rainbow-dba revision $2
+        else
+            echo "Missing one parameter"
+            exit 1
+        fi
+        ;;
+  downgrade)
+        /usr/bin/.rainbow-dba downgrade
+        ;;
+  backup)
+        /usr/bin/.rainbow-dba backup
+        ;;
+  *)
+        echo $"Usage: $0 {migrate|revision|downgrade|backup}"
+        exit 2
+esac
